@@ -19,8 +19,21 @@ public class HelloController {
         return calculateService.calculate();
     }
 
-    @GetMapping("/sum")
+    @GetMapping("/plus")
     public String sum(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
         return String.valueOf(calculateService.sum(num1, num2));
+    }
+
+    @GetMapping("/minus")
+    public String minus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
+        return String.valueOf(calculateService.minus(num1, num2));
+    }
+@GetMapping("/multiply")
+    public String multiply(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
+        return String.valueOf(calculateService.multiply( num1,num2));
+    }
+    @GetMapping("/divide")
+    public String divide(@RequestParam("num1") double num1, @RequestParam("num2") double num2) {
+        return String.valueOf(calculateService.divide( num1, num2));
     }
 }
